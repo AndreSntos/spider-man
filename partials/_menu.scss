@@ -15,9 +15,15 @@ header {
     display: flex;
     align-items: center;
     justify-content: flex-start;
+    padding-left: 10px;
+
+   
   }
   
   .nav-list {
+    @include responsive(){
+      display: none;
+    }
     list-style: none;
     display: flex;
     li {
@@ -33,13 +39,16 @@ header {
   
   .logo {
     max-width: 88px;
+    @include responsive(){
+     max-width: 50px;
+    }
   }
   
   .nav-link {
     display: inline-block;
     color: $gray-3;
     padding: 8px 16px;
-    font-size: 14px;
+    font-size: 12px;
     letter-spacing: 2px;
     text-transform: uppercase;
     font-weight: 200;
@@ -70,13 +79,28 @@ header {
     }
 }
 
+.bx{
+  @include responsive(){
+    display: block;
+  }
+  display: none;
+  width: 48px;
+  height: 48px;
+  background-color: $white;
+  border-radius: 8px;
+}
+
 .nav-social {
+  @include responsive(){
+    display: none;
+  }
        display: flex;
        align-items: center;
+       padding-right: 10px;
     svg {
       cursor: pointer;
       margin-left: 16px;
-      width: 24px;
+      width: 18px;
       path,
       circle {
         transition: 0.7s ease;
